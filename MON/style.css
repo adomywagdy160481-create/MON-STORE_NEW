@@ -36,25 +36,35 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #000000; c
 .products-grid { 
     display: flex; 
     justify-content: center; 
-    gap: 20px; 
+    gap: 15px; /* مسافة متناسقة بين الكروت */
     flex-wrap: wrap; 
-    padding: 0 10px; /* إضافة حواف خفيفة من الجوانب */
+    padding: 0 15px; /* حواف متناسقة مع حواف الشاشة */
+    width: 100%;
 }
 
-/* التعديل هنا: جعل التيشرتات تظهر اثنينات اثنينات */
+/* التعديل السحري: التيشرتات اتنينات وتملى الصفحة بالكامل */
 .product-card { 
     background-color: #161920; 
     border: 1px solid #232834; 
     border-radius: 12px; 
-    width: calc(50% - 10px); /* يقسم الصف على 2 بالظبط ويحسب حساب الـ gap */
-    max-width: 280px; /* يمنع الكارت إنه يوسع بزيادة عن اللزوم على الشاشات الكبيرة */
-    padding: 15px; /* تقليل البادينج سيكا عشان التيشرتات تاخد راحتها */
+    /* يحسب العرض بحيث يكون فيه كارتين بالظبط في الصف ويملوا المساحة */
+    width: calc(50% - 10px); 
+    flex-grow: 1; /* يخلي الكروت تفرش وتكبر وتملى أي فراغات باقية في الشاشة */
+    min-width: 145px; /* يضمن إن الكروت ميتكرمشوش بزيادة في الشاشات الصغيرة جداً */
+    padding: 15px; 
     text-align: center; 
     cursor: pointer; 
     transition: 0.3s; 
 }
 
-.shirt-img { width: 100%; height: auto; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; margin-bottom: 12px; }
+.shirt-img { 
+    width: 100%; 
+    height: auto; 
+    aspect-ratio: 1/1; /* يخلي الصورة مربعة ومظبوطة دايماً */
+    object-fit: cover; 
+    border-radius: 8px; 
+    margin-bottom: 12px; 
+}
 
 /* تنسيقات صفحة التفاصيل */
 #details-page { max-width: 600px; margin: 40px auto; padding: 30px; background-color: #000000; border: 2px solid #ffffff; border-radius: 16px; text-align: center; }
