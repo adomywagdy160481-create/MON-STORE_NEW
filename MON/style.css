@@ -1,18 +1,18 @@
 /* تنسيقات عامة */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #000000; color: #ffffff; padding-top: 40px; font-size: 16px; }
+body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #000000; color: #ffffff; padding-top: 30px; font-size: 16px; }
 
 /* تنسيقات الهيدر */
 .header-center-box {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    margin: 30px auto;
+    gap: 15px;
+    margin: 25px auto;
     width: fit-content;
     cursor: pointer;
     transform: skewX(-10deg);
-    padding: 15px 30px;
+    padding: 12px 25px;
     border-bottom: 3px solid #ffffff;
 }
 
@@ -24,7 +24,7 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #000000; c
 
 .brand-title {
     background: #ffffff;
-    font-size: 28px;
+    font-size: 26px;
     font-weight: 900;
     line-height: 1;
     color: #000000;
@@ -35,22 +35,21 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #000000; c
 /* تنسيقات الشبكة والمنتجات */
 .products-grid { 
     display: flex; 
-    justify-content: center; 
-    gap: 12px; /* تقليل المسافة سيكا للموبايل */
+    justify-content: flex-start; /* يخلي التيشرتات تبدأ من الشمال لليمين عشان الأخير ميبقاش في النص لوحده */
+    gap: 12px; 
     flex-wrap: wrap; 
-    padding: 0 10px; 
+    padding: 0 12px; 
     width: 100%;
 }
 
-/* التيشرتات اتنينات وتملى الصفحة بالكامل بدون فراغات مزعجة */
+/* التيشرتات اتنينات وثابتة الحجم تماماً لمنع التشوه */
 .product-card { 
     background-color: #161920; 
     border: 1px solid #232834; 
     border-radius: 12px; 
-    width: calc(50% - 6px); /* حساب دقيق جداً عشان الكارتين يجوا جنب بعض بالملي */
-    flex-grow: 1; 
-    min-width: 145px; 
-    padding: 12px; /* بادينج متناسق عشان يدي مساحة أكبر للصورة */
+    /* العرض ده بيضمن إن دايماً فيه 2 في الصف، حتى لو اتبقى تيشرت واحد في الآخر هيفضل بنفس الحجم */
+    width: calc(50% - 6px); 
+    padding: 14px; 
     text-align: center; 
     cursor: pointer; 
     transition: 0.3s; 
@@ -59,18 +58,19 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #000000; c
     justify-content: space-between;
 }
 
-/* تنسيق النصوص جوة الكارت عشان تكون واضحة من غير زوم */
+/* تكبير الخطوط جوة الكروت عشان الرؤية بدون زوم */
 .product-card h3, .product-card .product-title {
-    font-size: 18px; /* حجم خط واضح جداً لاسم المنتج */
-    margin: 8px 0;
+    font-size: 18px; 
+    margin: 10px 0 6px 0;
     font-weight: 600;
+    line-height: 1.3;
 }
 
 .product-card .price {
-    font-size: 16px; /* حجم واضح للسعر */
+    font-size: 17px; 
     font-weight: bold;
     color: #0cff34;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .shirt-img { 
@@ -79,21 +79,35 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #000000; c
     aspect-ratio: 1/1; 
     object-fit: cover; 
     border-radius: 8px; 
-    margin-bottom: 10px; 
 }
 
-/* زرار عرض التفاصيل جوة الكارت */
+/* زرار عرض التفاصيل ليكون واضح وكبير للضغط */
 .product-card button {
-    font-size: 15px;
-    padding: 10px;
+    font-size: 16px;
+    padding: 12px;
+    font-weight: bold;
+    width: 100%;
+}
+
+/* تنسيقات صفحة التفاصيل - تكبير العناصر لتملى الشاشة وتكون واضحة */
+#details-page { 
+    max-width: 500px; 
+    margin: 20px auto; 
+    padding: 25px 20px; 
+    background-color: #000000; 
+    border: 2px solid #ffffff; 
+    border-radius: 16px; 
+    text-align: center; 
+    width: 92%; /* تفرش وتملى شاشة الموبايل بشكل مريح */
+}
+
+#details-page h2 { 
+    font-size: 26px; 
+    margin-bottom: 20px; 
     font-weight: bold;
 }
 
-/* تنسيقات صفحة التفاصيل */
-#details-page { max-width: 600px; margin: 20px auto; padding: 20px; background-color: #000000; border: 2px solid #ffffff; border-radius: 16px; text-align: center; width: 95%; }
-#details-page h2 { font-size: 24px; margin-bottom: 15px; }
-
-/* عرض الصورتين بجانب بعض */
+/* عرض الصورتين بجانب بعض في التفاصيل */
 .slider-wrapper { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; }
 .details-img {
     width: 48%; 
@@ -105,22 +119,35 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #000000; c
 /* إخفاء أزرار التبديل */
 .arrows { display: none; }
 
-/* تنسيقات العداد والمقاسات */
-.counter-container { display: flex; justify-content: center; align-items: center; gap: 15px; margin: 20px 0; }
-.counter-container button { padding: 12px 24px; font-size: 18px; background: #0cff34; color: #000; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; }
-.counter-container input { width: 80px; padding: 10px; font-size: 22px; text-align: center; border-radius: 10px; border: none; }
+/* تنسيقات العداد والمقاسات لجعلها ضخمة وسهلة القراءة */
+.counter-container { display: flex; justify-content: center; align-items: center; gap: 20px; margin: 25px 0; }
+.counter-container button { padding: 15px 25px; font-size: 22px; background: #0cff34; color: #000; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; }
+.counter-container input { width: 90px; padding: 12px; font-size: 24px; text-align: center; border-radius: 10px; border: none; font-weight: bold; }
 
-.size-option-btn { display: flex; justify-content: space-between; align-items: center; background: #161920; border: 1px solid #344454; padding: 14px; margin-bottom: 8px; border-radius: 8px; color: white; cursor: pointer; width: 100%; font-size: 16px; }
+.size-option-btn { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    background: #161920; 
+    border: 1px solid #344454; 
+    padding: 16px; /* زيادة مساحة الضغط للمقاسات */
+    margin-bottom: 10px; 
+    border-radius: 10px; 
+    color: white; 
+    cursor: pointer; 
+    width: 100%; 
+    font-size: 17px; 
+}
 .size-option-btn.selected { border-color: #0cff34; background: #ffffff; color: #000; font-weight: bold; }
 
-.buy-btn { background: #0cff34; color: #000; border: none; padding: 15px 30px; border-radius: 8px; font-weight: bold; cursor: pointer; width: 100%; font-size: 18px; margin-top: 10px; }
-.back-btn { background: #3f4454; color: #fff; border: none; padding: 12px 24px; border-radius: 8px; cursor: pointer; margin-top: 15px; font-size: 16px; width: 100%; }
+.buy-btn { background: #0cff34; color: #000; border: none; padding: 16px 30px; border-radius: 10px; font-weight: bold; cursor: pointer; width: 100%; font-size: 19px; margin-top: 15px; }
+.back-btn { background: #3f4454; color: #fff; border: none; padding: 14px 24px; border-radius: 10px; cursor: pointer; margin-top: 15px; font-size: 17px; width: 100%; }
 
-/* شاشة الموبايل المخصوصة لمنع الزوم نهائياً وتوضيح كل شيء */
+/* شاشة الموبايل: ضبط الحواف لضمان اتنينات مظبوطة دايماً */
 @media (max-width: 480px) {
-    body { padding-top: 20px; }
-    .brand-title { font-size: 24px; }
-    .header-center-box { padding: 10px 20px; margin: 20px auto; }
-    .product-card h3, .product-card .product-title { font-size: 16px; } /* خط متناسق مع حجم كارت الموبايل */
-    .product-card { padding: 10px; }
+    body { padding-top: 15px; }
+    .products-grid { padding: 0 8px; gap: 8px; }
+    .product-card { width: calc(50% - 4px); padding: 10px; }
+    .product-card h3, .product-card .product-title { font-size: 16px; }
+    .product-card .price { font-size: 15px; }
 }
