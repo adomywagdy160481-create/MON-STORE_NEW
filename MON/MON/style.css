@@ -1,6 +1,6 @@
 /* تنسيقات عامة */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #0f1115; color: #ffffff; padding-top: 40px; }
+body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #000000; color: #ffffff; padding-top: 40px; }
 
 /* تنسيقات الهيدر */
 .header-center-box {
@@ -13,7 +13,7 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #0f1115; c
     cursor: pointer;
     transform: skewX(-10deg);
     padding: 15px 30px;
-    border-bottom: 3px solid #0cff34;
+    border-bottom: 3px solid #ffffff;
 }
 
 .logo-box img {
@@ -23,7 +23,7 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #0f1115; c
 }
 
 .brand-title {
-    background: #0cff34;
+    background: #ffffff;
     font-size: 28px;
     font-weight: 900;
     line-height: 1;

@@ -96,7 +96,7 @@ function goBackToStore() {
 // فتح لوحة الإدارة
 function openAdminPanel() {
     let password = prompt("أدخل كلمة مرور الإدارة:");
-    if(password === "2010") {
+    if(password === "MON") {
         window.open("https://sheets.google.com/", '_blank');
     } else {
         alert("كلمة المرور غير صحيحة");
