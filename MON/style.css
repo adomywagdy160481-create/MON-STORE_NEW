@@ -1,5 +1,5 @@
 /* ========================================== */
-/* تنسيقات عامة وإعادة ضبط          */
+/* تنسيقات عامة وإعادة ضبط (ستايل سترايكر الاحترافي) */
 /* ========================================== */
 * { 
     box-sizing: border-box; 
@@ -9,37 +9,37 @@
 
 body { 
     font-family: 'Segoe UI', Tahoma, sans-serif; 
-    background-color: #111111; /* درجة الأسود الداكنة والمميزة للمواقع الرياضية */
+    background-color: #111111; /* الأسود الداكن الفخم الخاص بمتجرك */
     color: #ffffff; 
-    padding-top: 20px; 
+    padding-top: 10px; 
     font-size: 16px; 
 }
 
 /* ========================================== */
-/* تنسيقات الهيدر              */
+/* تنسيقات الهيدر المائل المنساب              */
 /* ========================================== */
 .header-center-box {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
-    margin: 25px auto;
+    gap: 12px;
+    margin: 15px auto;
     width: fit-content;
     cursor: pointer;
     transform: skewX(-10deg);
-    padding: 12px 25px;
+    padding: 10px 25px;
     border-bottom: 3px solid #ffffff;
 }
 
 .logo-box img {
-    width: 65px;
-    height: 65px;
-    border-radius: 12px;
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
 }
 
 .brand-title {
     background: #ffffff;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 900;
     line-height: 1;
     color: #000000;
@@ -48,24 +48,24 @@ body {
 }
 
 /* ========================================== */
-/* 📱 شبكة المنتجات في الصفحة الرئيسية 📱 */
+/* 📱 شبكة المنتجات (اثنينات كبار وواضحين جداً على الموبايل) */
 /* ========================================== */
 .products-grid { 
     display: flex; 
     justify-content: flex-start; 
-    gap: 8px;          /* المسافة الدقيقة بين الكروت */
+    gap: 10px;          /* مسافة مدروسة بين الكروت لمنع العصر */
     flex-wrap: wrap; 
-    padding: 0 8px;    /* الهوامش الجانبية للشاشة */
+    padding: 0 10px;    /* هوامش الشاشة الجانبية */
     width: 100%;
 }
 
 .product-card { 
-    background-color: #1a1a1a;    /* نفس لون خلفية كارت سترايكر الداكن */
-    border: 1px solid #2d2d2d;    /* حافة ناعمة جداً للكارت */
-    border-radius: 12px;          /* انحناء الحواف الاحترافي */
-    flex: 0 0 calc(50% - 4px);    /* الحسبة السحرية عشان يطلعوا اثنينات بالظبط */
-    max-width: calc(50% - 4px);
-    padding: 10px;                /* مسافة داخلية متناسقة لفرش العناصر */
+    background-color: #1a1a1a;    /* لون الكارت الداكن */
+    border: 1px solid #2d2d2d;    /* حواف كروت سترايكر الناعمة */
+    border-radius: 12px;          
+    flex: 0 0 calc(50% - 5px);    /* الحسبة السحرية عشان يطلعوا كارتين في السطر بالظبط */
+    max-width: calc(50% - 5px);
+    padding: 12px;                /* مسافة داخلية مريحة للعناصر */
     text-align: center; 
     cursor: pointer;
     transition: 0.3s;
@@ -74,7 +74,7 @@ body {
     justify-content: space-between;
 }
 
-/* ضبط انحناء وحجم صورة التيشرت */
+/* ضبط حجم وتناسب صورة المنتج ليكون كبير ومريح للعين */
 .shirt-img { 
     width: 100%; 
     height: auto; 
@@ -83,16 +83,16 @@ body {
     border-radius: 8px; 
 }
 
-/* اسم التيشرت */
+/* اسم المنتج - خط واضح وحجم ممتاز مش محتاج زوم */
 .product-card h3, .product-card .product-title {
-    font-size: 14px;              
+    font-size: 15px;              
     margin: 10px 0 4px 0;
     font-weight: 600;
     line-height: 1.4;
     color: #ffffff;
 }
 
-/* كلمة متوفر باللون الأخضر المميز */
+/* كلمة متوفر الآن باللون الأخضر الفوسفوري المميز */
 .product-card .availability {
     font-size: 12px;
     color: #00e676;               
@@ -104,7 +104,7 @@ body {
     gap: 4px;
 }
 
-/* السعر القديم والجديد */
+/* تفاصيل الأسعار على طريقة سترايكر */
 .product-card .old-price {
     font-size: 12px;
     color: #777777;
@@ -113,27 +113,27 @@ body {
 }
 
 .product-card .price {
-    font-size: 15px; 
+    font-size: 16px; 
     font-weight: bold;
     color: #ffffff; 
 }
 
-/* زر الشراء داخل الكارت الرئيسي */
-.product-card button.buy-btn {
-    font-size: 13px;
-    padding: 8px;
+/* زر عرض التفاصيل الأخضر الأنيق تحت كل كارت */
+.product-card button.view-details-btn {
+    font-size: 14px;
+    padding: 10px;
     font-weight: bold;
     width: 100%;
-    border-radius: 6px;
-    margin-top: 6px;
+    border-radius: 8px;
+    margin-top: 8px;
     background: #00e676;
-    color: #000;
+    color: #000000;
     border: none;
     cursor: pointer;
 }
 
 /* ========================================== */
-/* تنسيقات صفحة التفاصيل الأساسية (للشاشات الكبيرة) */
+/* تنسيقات صفحة التفاصيل الأساسية             */
 /* ========================================== */
 #details-page { 
     max-width: 600px; 
@@ -160,26 +160,19 @@ body {
     margin-bottom: 25px; 
 }
 
-/* تأثير البرواز الأبيض اللامع والمتحرك للصور */
+/* ✨ سحر البرواز الأبيض اللامع والمتحرك (Glow Effect) حوالين الصور ✨ */
 .details-img {
     width: 48%; 
     height: auto;
     border-radius: 14px;
     object-fit: cover;
-    
-    /* البرواز الأبيض الأساسي */
     border: 2px solid #ffffff; 
-    
-    /* طبقات الظل الأبيض اللامع (Glow) */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 
                 0 0 15px rgba(255, 255, 255, 0.4), 
                 0 0 25px rgba(255, 255, 255, 0.2);
-                
-    /* تشغيل أنيميشن اللمعان المتحرك */
     animation: whiteGlow 2s infinite alternate ease-in-out;
 }
 
-/* حركة اللمعان (البريق بيزيد ويقل بنعومة) */
 @keyframes whiteGlow {
     0% {
         box-shadow: 0 0 8px rgba(255, 255, 255, 0.3), 
@@ -227,7 +220,7 @@ body {
     color: #000000; 
 }
 
-/* أزرار اختيار المقاسات */
+/* أزرار اختيار المقاسات لتكون كبيرة وواضحة جداً للضغط */
 .size-option-btn { 
     display: flex; 
     justify-content: center; 
@@ -247,11 +240,11 @@ body {
 .size-option-btn.selected { 
     border-color: #00e676; 
     background: #00e676; 
-    color: #000; 
+    color: #000000; 
     font-weight: bold; 
 }
 
-/* الأزرار الكبيرة في صفحة التفاصيل */
+/* أزرار الإجراءات الكبيرة في صفحة التفاصيل */
 #details-page .buy-btn { 
     background: #00e676; 
     color: #000; 
@@ -279,29 +272,29 @@ body {
 }
 
 /* ========================================== */
-/* 📱 التعديل السحري لشاشات الموبايل (لتكبير كل شيء وإلغاء الحواف المحشورة) 📱 */
+/* 📱 الاستجابة الذكية للموبايل (بدون حواف بيضاء محشورة وعناصر ضخمة) 📱 */
 /* ========================================== */
 @media (max-width: 480px) {
     #details-page { 
         width: 100%; 
         max-width: 100%; 
-        border: none;           /* حذف البرواز الأبيض الخارجي المزعج */
-        border-radius: 0px;     /* جعل الصفحة تملأ كامل عرض الموبايل */
+        border: none;           /* حذف البرواز الأبيض الخارجي في الموبايل */
+        border-radius: 0px;     /* جعل الصفحة تملأ كامل عرض الموبايل مثل التطبيقات */
         padding: 15px 12px; 
         margin: 0 auto;
     }
     
     #details-page .details-title { 
-        font-size: 24px;        /* حجم خط كبير وواضح لاسم المنتج */
+        font-size: 24px;        
     }
 
     .size-option-btn { 
-        padding: 20px;          /* تكبير حجم الأزرار لتسهيل الضغط باليد */
-        font-size: 17px;        /* تكبير خط نص المقاسات */
+        padding: 20px;          /* زيادة المساحة لتسهيل اللمس والضغط باليد */
+        font-size: 17px;        /* تكبير حجم الخط */
     }
 
     .counter-container button {
-        padding: 15px 35px;     /* أزرار الـ + والـ - ضخمة ومريحة جداً */
+        padding: 15px 35px;     /* أزرار عداد ضخمة وسهلة */
         font-size: 28px;
     }
 
@@ -311,7 +304,7 @@ body {
     }
 
     #details-page .buy-btn { 
-        padding: 20px 24px;     /* زر تأكيد الشراء الأخضر كبير وواضح جداً */
+        padding: 20px 24px;     /* زر الشراء كبير وظاهر تحت إيدك مباشرة */
         font-size: 22px; 
     }
 
