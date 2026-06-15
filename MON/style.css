@@ -9,10 +9,20 @@
 
 body { 
     font-family: 'Segoe UI', Tahoma, sans-serif; 
-    background-color: #111111; /* الأسود الداكن الفخم الخاص بمتجرك */
+    background-color: #000000; /* الأسود الداكن الفخم الخاص بمتجرك */
     color: #ffffff; 
     padding-top: 10px; 
     font-size: 16px; 
+}
+p {
+    background: #000000;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 1.3;
+    color: #ffffff;
+    transform: skewX(-10deg);
+    text-align: center;
+    margin-bottom: 15px;
 }
 
 /* ========================================== */
@@ -25,16 +35,17 @@ body {
     gap: 12px;
     margin: 15px auto;
     width: fit-content;
-    cursor: pointer;
     transform: skewX(-10deg);
     padding: 10px 25px;
     border-bottom: 3px solid #ffffff;
+    position: relative;
 }
 
 .logo-box img {
     width: 60px;
     height: 60px;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .brand-title {
@@ -45,6 +56,57 @@ body {
     color: #000000;
     transform: skewX(-10deg);
     text-align: left;
+    padding: 2px 5px;
+}
+
+/* زر تبديل اللغة */
+#lang-toggle-btn {
+    background: #ffffff;
+    color: #000000;
+    border: none;
+    padding: 6px 12px;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transform: skewX(10deg); /* إلغاء ميل الهيدر ليكون معتدل */
+    margin-left: 15px;
+    transition: 0.3s;
+}
+#lang-toggle-btn:hover {
+    background: #00e676;
+}
+
+/* ========================================== */
+/* أزرار الفلترة والفئات المضافة حديثاً         */
+/* ========================================== */
+.filter-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin: 15px auto 25px auto;
+    flex-wrap: wrap;
+    width: 95%;
+    max-width: 600px;
+}
+
+.filter-btn {
+    background: #1a1a1a;
+    color: #ffffff;
+    border: 1px solid #2d2d2d;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: #00e676;
+    color: #000000;
+    border-color: #00e676;
+    box-shadow: 0 0 10px rgba(0, 230, 118, 0.4);
 }
 
 /* ========================================== */
@@ -53,19 +115,24 @@ body {
 .products-grid { 
     display: flex; 
     justify-content: flex-start; 
-    gap: 10px;          /* مسافة مدروسة بين الكروت لمنع العصر */
+    gap: 10px;          
     flex-wrap: wrap; 
-    padding: 0 10px;    /* هوامش الشاشة الجانبية */
+    padding: 0 10px;    
     width: 100%;
 }
 
+/* دعم الاتجاهات عند تحويل اللغة */
+html[dir="rtl"] .products-grid {
+    justify-content: flex-start;
+}
+
 .product-card { 
-    background-color: #1a1a1a;    /* لون الكارت الداكن */
-    border: 1px solid #2d2d2d;    /* حواف كروت سترايكر الناعمة */
+    background-color: #1a1a1a;    
+    border: 1px solid #2d2d2d;    
     border-radius: 12px;          
-    flex: 0 0 calc(50% - 5px);    /* الحسبة السحرية عشان يطلعوا كارتين في السطر بالظبط */
+    flex: 0 0 calc(50% - 5px);    
     max-width: calc(50% - 5px);
-    padding: 12px;                /* مسافة داخلية مريحة للعناصر */
+    padding: 12px;                
     text-align: center; 
     cursor: pointer;
     transition: 0.3s;
@@ -74,7 +141,6 @@ body {
     justify-content: space-between;
 }
 
-/* ضبط حجم وتناسب صورة المنتج ليكون كبير ومريح للعين */
 .shirt-img { 
     width: 100%; 
     height: auto; 
@@ -83,16 +149,15 @@ body {
     border-radius: 8px; 
 }
 
-/* اسم المنتج - خط واضح وحجم ممتاز مش محتاج زوم */
 .product-card h3, .product-card .product-title {
     font-size: 15px;              
     margin: 10px 0 4px 0;
     font-weight: 600;
     line-height: 1.4;
     color: #ffffff;
+    min-height: 42px; /* الحفاظ على تناسق الارتفاع */
 }
 
-/* كلمة متوفر الآن باللون الأخضر الفوسفوري المميز */
 .product-card .availability {
     font-size: 12px;
     color: #00e676;               
@@ -104,7 +169,6 @@ body {
     gap: 4px;
 }
 
-/* تفاصيل الأسعار على طريقة سترايكر */
 .product-card .old-price {
     font-size: 12px;
     color: #777777;
@@ -118,7 +182,6 @@ body {
     color: #ffffff; 
 }
 
-/* زر عرض التفاصيل الأخضر الأنيق تحت كل كارت */
 .product-card button.view-details-btn {
     font-size: 14px;
     padding: 10px;
@@ -160,7 +223,6 @@ body {
     margin-bottom: 25px; 
 }
 
-/* ✨ سحر البرواز الأبيض اللامع والمتحرك (Glow Effect) حوالين الصور ✨ */
 .details-img {
     width: 48%; 
     height: auto;
@@ -175,20 +237,15 @@ body {
 
 @keyframes whiteGlow {
     0% {
-        box-shadow: 0 0 8px rgba(255, 255, 255, 0.3), 
-                    0 0 15px rgba(255, 255, 255, 0.15), 
-                    0 0 20px rgba(255, 255, 255, 0.05);
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.3), 0 0 15px rgba(255, 255, 255, 0.15);
         border-color: #e0e0e0;
     }
     100% {
-        box-shadow: 0 0 18px rgba(255, 255, 255, 0.8), 
-                    0 0 30px rgba(255, 255, 255, 0.5), 
-                    0 0 45px rgba(255, 255, 255, 0.3);
+        box-shadow: 0 0 18px rgba(255, 255, 255, 0.8), 0 0 30px rgba(255, 255, 255, 0.5);
         border-color: #ffffff;
     }
 }
 
-/* العداد (الكمية) */
 .counter-container { 
     display: flex; 
     justify-content: center; 
@@ -220,7 +277,6 @@ body {
     color: #000000; 
 }
 
-/* أزرار اختيار المقاسات لتكون كبيرة وواضحة جداً للضغط */
 .size-option-btn { 
     display: flex; 
     justify-content: center; 
@@ -244,7 +300,6 @@ body {
     font-weight: bold; 
 }
 
-/* أزرار الإجراءات الكبيرة في صفحة التفاصيل */
 #details-page .buy-btn { 
     background: #00e676; 
     color: #000; 
@@ -272,14 +327,14 @@ body {
 }
 
 /* ========================================== */
-/* 📱 الاستجابة الذكية للموبايل (بدون حواف بيضاء محشورة وعناصر ضخمة) 📱 */
+/* 📱 الاستجابة الذكية للموبايل */
 /* ========================================== */
 @media (max-width: 480px) {
     #details-page { 
         width: 100%; 
         max-width: 100%; 
-        border: none;           /* حذف البرواز الأبيض الخارجي في الموبايل */
-        border-radius: 0px;     /* جعل الصفحة تملأ كامل عرض الموبايل مثل التطبيقات */
+        border: none;           
+        border-radius: 0px;     
         padding: 15px 12px; 
         margin: 0 auto;
     }
@@ -289,12 +344,12 @@ body {
     }
 
     .size-option-btn { 
-        padding: 20px;          /* زيادة المساحة لتسهيل اللمس والضغط باليد */
-        font-size: 17px;        /* تكبير حجم الخط */
+        padding: 20px;          
+        font-size: 17px;        
     }
 
     .counter-container button {
-        padding: 15px 35px;     /* أزرار عداد ضخمة وسهلة */
+        padding: 15px 35px;     
         font-size: 28px;
     }
 
@@ -304,7 +359,7 @@ body {
     }
 
     #details-page .buy-btn { 
-        padding: 20px 24px;     /* زر الشراء كبير وظاهر تحت إيدك مباشرة */
+        padding: 20px 24px;     
         font-size: 22px; 
     }
 

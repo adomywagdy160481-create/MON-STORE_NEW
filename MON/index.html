@@ -1,100 +1,111 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en" dir="ltr" id="html-tag">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>متجر MON الرسمي</title>
+    <title>MON Official Store</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header class="header-center-box" onclick="openAdminPanel()">
-        <div class="logo-box"><img src="slogan2.jpeg" alt="Logo"></div>
+    <header class="header-center-box">
+        <div class="logo-box" onclick="openAdminPanel()"><img src="slogan2.jpeg" alt="Logo"></div>
         <div class="brand-title"><span>MON</span><br><span>STORE</span></div>
+        <button id="lang-toggle-btn" onclick="toggleLanguage()">AR</button>
     </header>
+
+    <p id="site-description" data-en="MON Clothing Website<br>Best materials and prices" data-ar="موقع ملابس MON<br>باحسن الخامات والاسعار">
+        MON Clothing Website<br>Best materials and prices
+    </p>
+
+    <div class="filter-container">
+        <button class="filter-btn active" onclick="filterProducts('all', this)" id="btn-all" data-en="All Products" data-ar="جميع المنتجات">All Products</button>
+        <button class="filter-btn" onclick="filterProducts('mon-tshirts', this)" id="btn-mon" data-en="MON T-Shirts" data-ar="تيشرتات MON">MON T-Shirts</button>
+        <button class="filter-btn" onclick="filterProducts('out-of-chaos', this)" id="btn-chaos" data-en="MON - Out Of Chaos" data-ar="MON - Out Of Chaos">MON - Out Of Chaos</button>
+    </div>
 
     <div id="main-store-page">
         <main class="main-container">
             <div class="products-grid">
                 
-                <div class="product-card" onclick="showProductDetails('تيشرت MON بابي بلو', '4(1).jpeg', '4(2).jpeg')">
+                <div class="product-card" data-category="mon-tshirts" onclick="showProductDetails(this, '4(1).jpeg', '4(2).jpeg')" data-ar-title="تيشرت MON بابي بلو" data-en-title="MON Baby Blue T-Shirt">
                     <img src="4(1).jpeg" class="shirt-img">
-                    <h3 class="product-title">تيشرت MON بابي بلو</h3>
-                    <div class="availability">● متوفر الآن</div>
-                    <div class="old-price">1,200 EGP</div>
-                    <div class="price">650 EGP</div>
-                    <button class="view-details-btn">عرض التفاصيل</button>
+                    <h3 class="product-title">MON Baby Blue T-Shirt</h3>
+                    <div class="availability" data-en="● Available Now" data-ar="● متوفر الآن">● Available Now</div>
+                    <div class="old-price">549 EGP</div>
+                    <div class="price">399 EGP</div>
+                    <button class="view-details-btn" data-en="View Details" data-ar="عرض التفاصيل">View Details</button>
                 </div>
 
-                <div class="product-card" onclick="showProductDetails('تيشرت MON احمر', '5(1).jpeg', '5(2).jpeg')">
+                <div class="product-card" data-category="mon-tshirts" onclick="showProductDetails(this, '5(1).jpeg', '5(2).jpeg')" data-ar-title="تيشرت MON احمر" data-en-title="MON Red T-Shirt">
                     <img src="5(1).jpeg" class="shirt-img">
-                    <h3 class="product-title">تيشرت MON احمر</h3>
-                    <div class="availability">● متوفر الآن</div>
-                    <div class="old-price">1,200 EGP</div>
-                    <div class="price">650 EGP</div>
-                    <button class="view-details-btn">عرض التفاصيل</button>
+                    <h3 class="product-title">MON Red T-Shirt</h3>
+                    <div class="availability" data-en="● Available Now" data-ar="● متوفر الآن">● Available Now</div>
+                    <div class="old-price">549 EGP</div>
+                    <div class="price">399 EGP</div>
+                    <button class="view-details-btn" data-en="View Details" data-ar="عرض التفاصيل">View Details</button>
                 </div>
 
-                <div class="product-card" onclick="showProductDetails('تيشرت MON ابيض', '6(1).jpeg', '6(2).jpeg')">
+                <div class="product-card" data-category="mon-tshirts" onclick="showProductDetails(this, '6(1).jpeg', '6(2).jpeg')" data-ar-title="تيشرت MON ابيض" data-en-title="MON White T-Shirt">
                     <img src="6(1).jpeg" class="shirt-img">
-                    <h3 class="product-title">تيشرت MON ابيض</h3>
-                    <div class="availability">● متوفر الآن</div>
-                    <div class="old-price">1,200 EGP</div>
-                    <div class="price">650 EGP</div>
-                    <button class="view-details-btn">عرض التفاصيل</button>
+                    <h3 class="product-title">MON White T-Shirt</h3>
+                    <div class="availability" data-en="● Available Now" data-ar="● متوفر الآن">● Available Now</div>
+                    <div class="old-price">549 EGP</div>
+                    <div class="price">399 EGP</div>
+                    <button class="view-details-btn" data-en="View Details" data-ar="عرض التفاصيل">View Details</button>
                 </div>
 
-                <div class="product-card" onclick="showProductDetails('تيشرت MON اسود', '7(1).jpeg', '7(2).jpeg')">
+                <div class="product-card" data-category="mon-tshirts" onclick="showProductDetails(this, '7(1).jpeg', '7(2).jpeg')" data-ar-title="تيشرت MON اسود" data-en-title="MON Black T-Shirt">
                     <img src="7(1).jpeg" class="shirt-img">
-                    <h3 class="product-title">تيشرت MON اسود</h3>
-                    <div class="availability">● متوفر الآن</div>
-                    <div class="old-price">1,200 EGP</div>
-                    <div class="price">650 EGP</div>
-                    <button class="view-details-btn">عرض التفاصيل</button>
+                    <h3 class="product-title">MON Black T-Shirt</h3>
+                    <div class="availability" data-en="● Available Now" data-ar="● متوفر الآن">● Available Now</div>
+                    <div class="old-price">549 EGP</div>
+                    <div class="price">399 EGP</div>
+                    <button class="view-details-btn" data-en="View Details" data-ar="عرض التفاصيل">View Details</button>
                 </div>
 
-                <div class="product-card" onclick="showProductDetails('تيشرت MON اسود 2', '8 (1).jpeg', '8 (2).jpeg')">
+                <div class="product-card" data-category="out-of-chaos" onclick="showProductDetails(this, '8 (1).jpeg', '8 (2).jpeg')" data-ar-title="تيشرت MON اسود 2" data-en-title="MON Black T-Shirt 2 - Out Of Chaos">
                     <img src="8 (1).jpeg" class="shirt-img">
-                    <h3 class="product-title">تيشرت MON اسود 2</h3>
-                    <div class="availability">● متوفر الآن</div>
-                    <div class="old-price">1,200 EGP</div>
-                    <div class="price">650 EGP</div>
-                    <button class="view-details-btn">عرض التفاصيل</button>
+                    <h3 class="product-title">MON Black T-Shirt 2 - Out Of Chaos</h3>
+                    <div class="availability" data-en="● Available Now" data-ar="● متوفر الآن">● Available Now</div>
+                    <div class="old-price">549 EGP</div>
+                    <div class="price">399 EGP</div>
+                    <button class="view-details-btn" data-en="View Details" data-ar="عرض التفاصيل">View Details</button>
                 </div>
 
-                <div class="product-card" onclick="showProductDetails('تيشرت MON زيتي', '9 (1).jpeg', '9 (2).jpeg')">
+                <div class="product-card" data-category="out-of-chaos" onclick="showProductDetails(this, '9 (1).jpeg', '9 (2).jpeg')" data-ar-title="تيشرت MON زيتي" data-en-title="MON Olive T-Shirt - Out Of Chaos">
                     <img src="9 (1).jpeg" class="shirt-img">
-                    <h3 class="product-title">تيشرت MON زيتي</h3>
-                    <div class="availability">● متوفر الآن</div>
-                    <div class="old-price">1,200 EGP</div>
-                    <div class="price">650 EGP</div>
-                    <button class="view-details-btn">عرض التفاصيل</button>
+                    <h3 class="product-title">MON Olive T-Shirt - Out Of Chaos</h3>
+                    <div class="availability" data-en="● Available Now" data-ar="● متوفر الآن">● Available Now</div>
+                    <div class="old-price">549 EGP</div>
+                    <div class="price">399 EGP</div>
+                    <button class="view-details-btn" data-en="View Details" data-ar="عرض التفاصيل">View Details</button>
                 </div>
 
-                <div class="product-card" onclick="showProductDetails('تيشرت MON برجندي', '10 (1).jpeg', '10 (2).jpeg')">
+                <div class="product-card" data-category="out-of-chaos" onclick="showProductDetails(this, '10 (1).jpeg', '10 (2).jpeg')" data-ar-title="تيشرت MON برجندي" data-en-title="MON Burgundy T-Shirt - Out Of Chaos">
                     <img src="10 (1).jpeg" class="shirt-img">
-                    <h3 class="product-title">تيشرت MON برجندي</h3>
-                    <div class="availability">● متوفر الآن</div>
-                    <div class="old-price">1,200 EGP</div>
-                    <div class="price">650 EGP</div>
-                    <button class="view-details-btn">عرض التفاصيل</button>
+                    <h3 class="product-title">MON Burgundy T-Shirt - Out Of Chaos</h3>
+                    <div class="availability" data-en="● Available Now" data-ar="● متوفر الآن">● Available Now</div>
+                    <div class="old-price">549 EGP</div>
+                    <div class="price">399 EGP</div>
+                    <button class="view-details-btn" data-en="View Details" data-ar="عرض التفاصيل">View Details</button>
                 </div>
 
-                <div class="product-card" onclick="showProductDetails('تيشرت MON بابي بلو 2', '11 (1).jpeg', '11 (2).jpeg')">
+                <div class="product-card" data-category="out-of-chaos" onclick="showProductDetails(this, '11 (1).jpeg', '11 (2).jpeg')" data-ar-title="تيشرت MON بابي بلو 2" data-en-title="MON Baby Blue T-Shirt 2 - Out Of Chaos">
                     <img src="11 (1).jpeg" class="shirt-img">
-                    <h3 class="product-title">تيشرت MON بابي بلو 2</h3>
-                    <div class="availability">● متوفر الآن</div>
-                    <div class="old-price">1,200 EGP</div>
-                    <div class="price">650 EGP</div>
-                    <button class="view-details-btn">عرض التفاصيل</button>
+                    <h3 class="product-title">MON Baby Blue T-Shirt 2 - Out Of Chaos</h3>
+                    <div class="availability" data-en="● Available Now" data-ar="● متوفر الآن">● Available Now</div>
+                    <div class="old-price">549 EGP</div>
+                    <div class="price">399 EGP</div>
+                    <button class="view-details-btn" data-en="View Details" data-ar="عرض التفاصيل">View Details</button>
                 </div>
 
-                <div class="product-card" onclick="showProductDetails('تيشرت MON ابيض 2', '12 (1).jpeg', '12 (2).jpeg')">
+                <div class="product-card" data-category="out-of-chaos" onclick="showProductDetails(this, '12 (1).jpeg', '12 (2).jpeg')" data-ar-title="تيشرت MON ابيض 2" data-en-title="MON White T-Shirt 2 - Out Of Chaos">
                     <img src="12 (1).jpeg" class="shirt-img">
-                    <h3 class="product-title">تيشرت MON ابيض 2</h3>
-                    <div class="availability">● متوفر الآن</div>
-                    <div class="old-price">1,200 EGP</div>
-                    <div class="price">650 EGP</div>
-                    <button class="view-details-btn">عرض التفاصيل</button>
+                    <h3 class="product-title">MON White T-Shirt 2 - Out Of Chaos</h3>
+                    <div class="availability" data-en="● Available Now" data-ar="● متوفر الآن">● Available Now</div>
+                    <div class="old-price">549 EGP</div>
+                    <div class="price">399 EGP</div>
+                    <button class="view-details-btn" data-en="View Details" data-ar="عرض التفاصيل">View Details</button>
                 </div>
 
             </div>
@@ -115,8 +126,8 @@
             <input type="number" id="myNumber" value="1" readonly>
             <button onclick="updateValue(1)">+</button>
         </div>
-        <button class="buy-btn" onclick="sendOrderToWhatsApp()">تأكيد الشراء 🛒</button>
-        <button class="back-btn" onclick="goBackToStore()">رجوع للمتجر ↩</button>
+        <button class="buy-btn" id="buy-btn-text" onclick="sendOrderToWhatsApp()" data-en="Confirm Purchase 🛒" data-ar="تأكيد الشراء 🛒">Confirm Purchase 🛒</button>
+        <button class="back-btn" id="back-btn-text" onclick="goBackToStore()" data-en="Back to Store ↩" data-ar="رجوع للمتجر ↩">Back to Store ↩</button>
     </div>
 
     <script src="script.js"></script>
