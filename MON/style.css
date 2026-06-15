@@ -32,25 +32,23 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #000000; c
     text-align: left;
 }
 
-/* تنسيقات الشبكة والمنتجات */
+/* تنسيقات الشبكة والمنتجات للشاشات الكبيرة (الكمبيوتر والتابلت) */
 .products-grid { 
     display: flex; 
-    justify-content: flex-start; /* بيبدأ من الشمال لليمين */
-    gap: 12px; 
+    justify-content: flex-start; 
+    gap: 16px; 
     flex-wrap: wrap; 
-    padding: 0 12px; 
+    padding: 0 16px; 
     width: 100%;
 }
 
-/* حل مشكلة الكارت الأخير وتكبير الحجم */
 .product-card { 
     background-color: #161920; 
     border: 1px solid #232834; 
-    border-radius: 12px; 
-    /* الـ flex-grow: 0 بيمنع التيشرت الأخير إنه يتمط ويكبر */
-    flex: 0 0 calc(50% - 6px); 
-    max-width: calc(50% - 6px); /* حماية إضافية عشان يفضل دايماً نص الشاشة */
-    padding: 14px; 
+    border-radius: 16px; 
+    flex: 0 0 calc(33.333% - 11px); /* 3 تيشرتات في الصف على الشاشات الكبيرة */
+    max-width: calc(33.333% - 11px);
+    padding: 20px; 
     text-align: center; 
     cursor: pointer; 
     transition: 0.3s; 
@@ -59,19 +57,19 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #000000; c
     justify-content: space-between;
 }
 
-/* تكبير الخطوط جوة الكروت */
+/* تنسيق الخطوط الافتراضية */
 .product-card h3, .product-card .product-title {
-    font-size: 19px; /* كبرناها شوية */
-    margin: 12px 0 8px 0;
+    font-size: 20px; 
+    margin: 15px 0 10px 0;
     font-weight: 600;
-    line-height: 1.3;
+    line-height: 1.4;
 }
 
 .product-card .price {
-    font-size: 18px; 
+    font-size: 19px; 
     font-weight: bold;
     color: #0cff34;
-    margin-bottom: 12px;
+    margin-bottom: 15px;
 }
 
 .shirt-img { 
@@ -79,49 +77,50 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #000000; c
     height: auto; 
     aspect-ratio: 1/1; 
     object-fit: cover; 
-    border-radius: 8px; 
+    border-radius: 12px; 
 }
 
-/* زرار عرض التفاصيل */
 .product-card button {
-    font-size: 18px; /* كبرنا خط الزرار عشان يبقى واضح جداً */
+    font-size: 18px;
     padding: 14px;
     font-weight: bold;
     width: 100%;
 }
 
-/* تنسيقات صفحة التفاصيل */
+/* تنسيقات صفحة التفاصيل - جعلها ضخمة وواضحة جداً */
 #details-page { 
-    max-width: 500px; 
+    max-width: 600px; 
     margin: 20px auto; 
-    padding: 25px 20px; 
+    padding: 30px 20px; 
     background-color: #000000; 
     border: 2px solid #ffffff; 
-    border-radius: 16px; 
+    border-radius: 20px; 
     text-align: center; 
     width: 94%; 
 }
 
 #details-page h2 { 
-    font-size: 28px; /* تكبير عنوان صفحة التفاصيل */
-    margin-bottom: 20px; 
+    font-size: 32px; /* خط كبير جداً وواضح واسم المنتج باين */
+    margin-bottom: 25px; 
     font-weight: bold;
+    letter-spacing: 1px;
 }
 
-.slider-wrapper { display: flex; gap: 10px; justify-content: center; margin-bottom: 20px; }
+/* تكبير صبي الصور في صفحة التفاصيل */
+.slider-wrapper { display: flex; gap: 12px; justify-content: center; margin-bottom: 25px; }
 .details-img {
-    width: 48%; 
+    width: 49%; 
     height: auto;
-    border-radius: 8px;
-    border: 1px solid #ffffff;
+    border-radius: 12px;
+    border: 2px solid #232834;
 }
 
 .arrows { display: none; }
 
-/* تكبير أزرار العداد والمقاسات لشاشات الموبايل */
-.counter-container { display: flex; justify-content: center; align-items: center; gap: 20px; margin: 25px 0; }
-.counter-container button { padding: 15px 25px; font-size: 24px; background: #0cff34; color: #000; border: none; border-radius: 10px; font-weight: bold; cursor: pointer; }
-.counter-container input { width: 90px; padding: 12px; font-size: 26px; text-align: center; border-radius: 10px; border: none; font-weight: bold; }
+/* تكبير أزرار العداد والمقاسات لتجربة مريحة جداً */
+.counter-container { display: flex; justify-content: center; align-items: center; gap: 25px; margin: 30px 0; }
+.counter-container button { padding: 18px 30px; font-size: 26px; background: #0cff34; color: #000; border: none; border-radius: 12px; font-weight: bold; cursor: pointer; }
+.counter-container input { width: 100px; padding: 14px; font-size: 28px; text-align: center; border-radius: 12px; border: none; font-weight: bold; background-color: #161920; color: #fff; }
 
 .size-option-btn { 
     display: flex; 
@@ -129,33 +128,70 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #000000; c
     align-items: center; 
     background: #161920; 
     border: 1px solid #344454; 
-    padding: 18px; /* زيادة مساحة الضغط */
-    margin-bottom: 12px; 
-    border-radius: 10px; 
+    padding: 20px; /* مساحة ضغط ضخمة للموبايل */
+    margin-bottom: 14px; 
+    border-radius: 12px; 
     color: white; 
     cursor: pointer; 
     width: 100%; 
-    font-size: 19px; /* تكبير خط المقاسات */
+    font-size: 22px; /* خط كبير جداً للمقاسات */
 }
 .size-option-btn.selected { border-color: #0cff34; background: #ffffff; color: #000; font-weight: bold; }
 
-.buy-btn { background: #0cff34; color: #000; border: none; padding: 18px 30px; border-radius: 10px; font-weight: bold; cursor: pointer; width: 100%; font-size: 21px; margin-top: 15px; }
-.back-btn { background: #3f4454; color: #fff; border: none; padding: 16px 24px; border-radius: 10px; cursor: pointer; margin-top: 15px; font-size: 19px; width: 100%; }
+.buy-btn { background: #0cff34; color: #000; border: none; padding: 20px 30px; border-radius: 12px; font-weight: bold; cursor: pointer; width: 100%; font-size: 24px; margin-top: 20px; }
+.back-btn { background: #3f4454; color: #fff; border: none; padding: 18px 24px; border-radius: 12px; cursor: pointer; margin-top: 15px; font-size: 20px; width: 100%; }
 
-/* تعديل شاشة الموبايل عشان التيشرتات تطلع اتنينات ومفيش حاجة تصغر أو تمط */
+
+/* 📱 السحر كله هنا: إعدادات الموبايل لشاشة مريحة وعملاقة وبدون زوم 📱 */
 @media (max-width: 480px) {
-    body { padding-top: 15px; }
-    .products-grid { padding: 0 8px; gap: 8px; }
+    body { padding-top: 20px; }
     
-    /* هنا بنضمن إن الكارت يفضل 50% بالظبط حتى لو لوحده */
-    .product-card { 
-        flex: 0 0 calc(50% - 4px);
-        max-width: calc(50% - 4px);
-        padding: 12px; 
+    .products-grid { 
+        padding: 0 16px; /* مسافة مريحة من الجوانب */
+        gap: 24px; /* مسافة بين الكروت بالطول عشان العين ترتاح وهي بتنزل */
     }
     
-    /* تكبير الخطوط على الموبايل عشان تلغي حوار الزوم */
-    .product-card h3, .product-card .product-title { font-size: 18px; }
-    .product-card .price { font-size: 17px; }
-    .product-card button { font-size: 17px; padding: 12px; }
+    /* هنا خلينا الكارت ياخد الشاشة كلها (تيشرت واحد في الصف) */
+    .product-card { 
+        flex: 0 0 100%;
+        max-width: 100%;
+        padding: 20px; /* زيادة الحشو الداخلي عشان الكارت يفرش */
+        border-radius: 18px; /* حواف أنعم وأشيك */
+    }
+    
+    /* تكبير الصور لدرجة مذهلة وواضحة */
+    .shirt-img {
+        border-radius: 14px;
+    }
+    
+    /* تكبير الخطوط بشكل ضخم ومريح للعين تماماً */
+    .product-card h3, .product-card .product-title { 
+        font-size: 24px; /* خط العنوان كبير وواضح من بعيد */
+        margin: 18px 0 10px 0;
+    }
+    
+    .product-card .price { 
+        font-size: 22px; /* السعر واضح جداً باللون الأخضر المميز */
+        margin-bottom: 18px;
+    }
+    
+    /* زرار تفاصيل عملاق وسهل الضغط */
+    .product-card button { 
+        font-size: 20px; 
+        padding: 16px; 
+        border-radius: 10px;
+    }
+    
+    /* ضبط صفحة التفاصيل على الموبايل لتكون عملاقة */
+    #details-page h2 {
+        font-size: 28px;
+    }
+    .size-option-btn {
+        padding: 18px;
+        font-size: 20px;
+    }
+    .buy-btn {
+        padding: 18px;
+        font-size: 22px;
+    }
 }
