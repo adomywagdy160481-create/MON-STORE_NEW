@@ -9,9 +9,9 @@
 
 body { 
     font-family: 'Segoe UI', Tahoma, sans-serif; 
-    background-color: #000000; 
+    background-color: #111111; /* درجة الأسود المائلة للخلفية في المواقع الرياضية */
     color: #ffffff; 
-    padding-top: 30px; 
+    padding-top: 20px; 
     font-size: 16px; 
 }
 
@@ -48,24 +48,24 @@ body {
 }
 
 /* ========================================== */
-/* تنسيقات شبكة المنتجات (الشاشات الكبيرة)   */
+/* تنسيقات شبكة المنتجات (مطابقة تماماً للصورة) */
 /* ========================================== */
 .products-grid { 
     display: flex; 
     justify-content: flex-start; 
-    gap: 16px; 
+    gap: 12px;       /* مسافة دقيقة واحترافية بين الكروت */
     flex-wrap: wrap; 
-    padding: 0 16px; 
+    padding: 0 12px; /* هوامش الشاشة الجانبية */
     width: 100%;
 }
 
 .product-card { 
-    background-color: #161920; 
-    border: 1px solid #232834; 
-    border-radius: 16px; 
-    flex: 0 0 calc(33.333% - 11px); 
-    max-width: calc(33.333% - 11px);
-    padding: 20px; 
+    background-color: #1a1a1a;    /* لون خلفية الكارت الداكن والمميز في الصورة */
+    border: 1px solid #2d2d2d;    /* إطار ناعم جداً حول الكارت */
+    border-radius: 14px;          /* انحناء حواف الكارت الاحترافي */
+    flex: 0 0 calc(50% - 6px);    /* التقسيم السحري (اثنينات بجانب بعض) */
+    max-width: calc(50% - 6px);
+    padding: 12px;                /* مسافة داخلية متناسقة لفرش العناصر */
     text-align: center; 
     cursor: pointer; 
     transition: 0.3s; 
@@ -74,37 +74,72 @@ body {
     justify-content: space-between;
 }
 
-.product-card h3, .product-card .product-title {
-    font-size: 20px; 
-    margin: 15px 0 10px 0;
-    font-weight: 600;
-    line-height: 1.4;
-}
-
-.product-card .price {
-    font-size: 19px; 
-    font-weight: bold;
-    color: #0cff34;
-    margin-bottom: 15px;
-}
-
+/* حجم وتنسيق صورة التيشرت */
 .shirt-img { 
     width: 100%; 
     height: auto; 
     aspect-ratio: 1/1; 
     object-fit: cover; 
-    border-radius: 12px; 
+    border-radius: 10px;          /* انحناء خفيف لزوايا الصورة كما في موقع سترايكر */
 }
 
+/* اسم التيشرت (نفس حجم وتنسيق الصورة) */
+.product-card h3, .product-card .product-title {
+    font-size: 15px;              /* حجم خط دقيق ومناسب لعرض الكارت */
+    margin: 12px 0 6px 0;
+    font-weight: 600;
+    line-height: 1.4;
+    color: #ffffff;
+    padding: 0 4px;
+}
+
+/* حالة التوفر (متوفر باللون الأخضر) */
+.product-card .availability {
+    font-size: 13px;
+    color: #00e676;               /* درجة الأخضر المضيئة الخاصة بعلامة متوفر */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* تنسيق حاوية الأسعار */
+.price-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+/* السعر القديم المشطوب */
+.product-card .old-price {
+    font-size: 13px;
+    color: #888888;
+    text-decoration: line-through; /* خط شطب السعر */
+}
+
+/* السعر الحالي الأساسي */
+.product-card .price {
+    font-size: 16px; 
+    font-weight: bold;
+    color: #ffffff;               /* السعر باللون الأبيض الواضح تماماً مثل الصورة */
+    margin-bottom: 4px;
+}
+
+/* زر الكارت (إذا كنت تستخدمه) */
 .product-card button {
-    font-size: 18px;
-    padding: 14px;
+    font-size: 14px;
+    padding: 10px;
     font-weight: bold;
     width: 100%;
+    border-radius: 8px;
+    margin-top: 8px;
 }
 
 /* ========================================== */
-/* تنسيقات صفحة التفاصيل (الشاشات الكبيرة)   */
+/* تنسيقات صفحة التفاصيل                     */
 /* ========================================== */
 #details-page { 
     max-width: 600px; 
@@ -152,7 +187,7 @@ body {
 .counter-container button { 
     padding: 18px 32px; 
     font-size: 28px; 
-    background: #0cff34; 
+    background: #00e676; 
     color: #000; 
     border: none; 
     border-radius: 12px; 
@@ -188,14 +223,14 @@ body {
 }
 
 .size-option-btn.selected { 
-    border-color: #0cff34; 
+    border-color: #00e676; 
     background: #ffffff; 
     color: #000; 
     font-weight: bold; 
 }
 
 .buy-btn { 
-    background: #0cff34; 
+    background: #00e676; 
     color: #000; 
     border: none; 
     padding: 22px 30px; 
@@ -205,7 +240,7 @@ body {
     width: 100%; 
     font-size: 26px; 
     margin-top: 20px; 
-    box-shadow: 0 4px 15px rgba(12, 255, 52, 0.3); 
+    box-shadow: 0 4px 15px rgba(0, 230, 118, 0.3); 
 }
 
 .back-btn { 
@@ -221,102 +256,26 @@ body {
 }
 
 /* ========================================== */
-/* 📱 السحر كله هنا: إعدادات الموبايل (اثنينات عملاقة زي المواقع المحترفة) 📱 */
+/* 📱 الاستجابة التامة للهواتف الذكية          */
 /* ========================================== */
 @media (max-width: 480px) {
-    body { padding-top: 15px; }
-    
-    /* 1. ضبط الشبكة الأساسية للمنتجات لتكسب مساحة قصوى */
     .products-grid { 
-        padding: 0 10px; /* تقليل الهامش الخارجي عشان نكبر الكروت */
-        gap: 10px;       /* مسافة ذكية بين المنتجات */
+        padding: 0 8px; 
+        gap: 8px;       
     }
     
-    /* 2. عرض الكروت اثنينات ثابتة وواخده المساحة كاملة بدون تميط */
     .product-card { 
-        flex: 0 0 calc(50% - 5px);
-        max-width: calc(50% - 5px);
-        padding: 8px; /* تقليل الـ padding الداخلي عشان ندي مساحة أكبر للصورة والكلام */
-        border-radius: 12px; 
-    }
-    
-    /* 3. تعديل الصورة عشان تفرش جوه الكارت بالظبط وتطلع واضحة */
-    .shirt-img {
-        border-radius: 8px;
-    }
-    
-    /* 4. تكبير الخطوط والأسعار لتكون واضحة ومقروءة جداً من غير زوم */
-    .product-card h3, .product-card .product-title { 
-        font-size: 16px; /* مقاس خط ممتاز لاسم التيشرت في مساحة الـ 50% */
-        margin: 8px 0 4px 0;
-        font-weight: bold;
-    }
-    
-    .product-card .price { 
-        font-size: 15px; 
-        margin-bottom: 8px;
-    }
-    
-    .product-card button { 
-        font-size: 14px; 
+        flex: 0 0 calc(50% - 4px);
+        max-width: calc(50% - 4px);
         padding: 10px; 
-        border-radius: 6px;
     }
     
-    /* -------------------------------------- */
-    /* 5. ضبط صفحة التفاصيل (عشان تفرش وتكبر زي ما طلبت) */
-    /* -------------------------------------- */
+    /* ضبط أبعاد وتفاصيل صفحة المنتج المنبثقة على الموبايل */
     #details-page { 
         width: 100%; 
         max-width: 100%; 
         border: none; 
         border-radius: 0px; 
         padding: 20px 12px; 
-    }
-
-    #details-page h2 { 
-        font-size: 26px; 
-        margin-bottom: 20px;
-    }
-
-    /* في صفحة التفاصيل: الصورتين هيفضلوا جنب بعض بس واخدين أقصى عرض متاح */
-    .slider-wrapper {
-        gap: 8px;
-        margin-bottom: 20px;
-    }
-    
-    .details-img {
-        width: 49%; 
-        border-radius: 10px;
-    }
-
-    .size-option-btn {
-        padding: 18px 14px;
-        font-size: 18px; 
-        border-radius: 10px;
-        margin-bottom: 10px;
-    }
-
-    .counter-container button {
-        padding: 14px 24px;
-        font-size: 24px;
-    }
-    
-    .counter-container input {
-        width: 85px;
-        font-size: 24px;
-        padding: 10px;
-    }
-
-    .buy-btn {
-        padding: 18px;
-        font-size: 22px; 
-        border-radius: 10px;
-    }
-    
-    .back-btn {
-        padding: 16px;
-        font-size: 18px;
-        border-radius: 10px;
     }
 }
