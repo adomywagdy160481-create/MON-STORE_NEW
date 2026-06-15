@@ -1,6 +1,6 @@
 /* تنسيقات عامة */
 * { box-sizing: border-box; margin: 0; padding: 0; }
-body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #0f1115; color: #ffffff; padding-top: 40px; }
+body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #000000; color: #ffffff; padding-top: 40px; }
 
 /* تنسيقات الهيدر */
 .header-center-box {
@@ -13,7 +13,7 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #0f1115; c
     cursor: pointer;
     transform: skewX(-10deg);
     padding: 15px 30px;
-    border-bottom: 3px solid #0cff34;
+    border-bottom: 3px solid #ffffff;
 }
 
 .logo-box img {
@@ -23,7 +23,7 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #0f1115; c
 }
 
 .brand-title {
-    background: #0cff34;
+    background: #ffffff;
     font-size: 28px;
     font-weight: 900;
     line-height: 1;
@@ -33,9 +33,28 @@ body { font-family: 'Segoe UI', Tahoma, sans-serif; background-color: #0f1115; c
 }
 
 /* تنسيقات الشبكة والمنتجات */
-.products-grid { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
-.product-card { background-color: #161920; border: 1px solid #232834; border-radius: 12px; width: 280px; padding: 20px; text-align: center; cursor: pointer; transition: 0.3s; }
-.shirt-img { width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 12px; }
+.products-grid { 
+    display: flex; 
+    justify-content: center; 
+    gap: 20px; 
+    flex-wrap: wrap; 
+    padding: 0 10px; /* إضافة حواف خفيفة من الجوانب */
+}
+
+/* التعديل هنا: جعل التيشرتات تظهر اثنينات اثنينات */
+.product-card { 
+    background-color: #161920; 
+    border: 1px solid #232834; 
+    border-radius: 12px; 
+    width: calc(50% - 10px); /* يقسم الصف على 2 بالظبط ويحسب حساب الـ gap */
+    max-width: 280px; /* يمنع الكارت إنه يوسع بزيادة عن اللزوم على الشاشات الكبيرة */
+    padding: 15px; /* تقليل البادينج سيكا عشان التيشرتات تاخد راحتها */
+    text-align: center; 
+    cursor: pointer; 
+    transition: 0.3s; 
+}
+
+.shirt-img { width: 100%; height: auto; aspect-ratio: 1/1; object-fit: cover; border-radius: 8px; margin-bottom: 12px; }
 
 /* تنسيقات صفحة التفاصيل */
 #details-page { max-width: 600px; margin: 40px auto; padding: 30px; background-color: #000000; border: 2px solid #ffffff; border-radius: 16px; text-align: center; }
