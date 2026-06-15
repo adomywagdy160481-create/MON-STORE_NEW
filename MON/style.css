@@ -27,7 +27,7 @@ body {
     width: fit-content;
     cursor: pointer;
     transform: skewX(-10deg);
-    padding: 12px 25px;
+    padding: 50px 30px;
     border-bottom: 3px solid #ffffff;
 }
 
