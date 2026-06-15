@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>متجر MON الرسمي</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header-center-box" onclick="openAdminPanel()">
+        <div class="logo-box"><img src="slogan2.jpeg" alt="Logo"></div>
+        <div class="brand-title"><span>MON</span><br><span>STORE</span></div>
+    </header>
+
+    <div id="main-store-page">
+        <main class="main-container">
+            <div class="products-grid">
+                <div class="product-card" onclick="showProductDetails('تيشرت MON بابي بلو', '4(1).jpeg', '4(2).jpeg')"><img src="4(1).jpeg" class="shirt-img"><button class="buy-btn">عرض التفاصيل</button></div>
+                <div class="product-card" onclick="showProductDetails('تيشرت MON احمر', '5(1).jpeg', '5(2).jpeg')"><img src="5(1).jpeg" class="shirt-img"><button class="buy-btn">عرض التفاصيل</button></div>
+                <div class="product-card" onclick="showProductDetails('تيشرت MON ابيض', '6(1).jpeg', '6(2).jpeg')"><img src="6(1).jpeg" class="shirt-img"><button class="buy-btn">عرض التفاصيل</button></div>
+                <div class="product-card" onclick="showProductDetails('تيشرت MON اسود', '7(1).jpeg', '7(2).jpeg')"><img src="7(1).jpeg" class="shirt-img"><button class="buy-btn">عرض التفاصيل</button></div>
+                <div class="product-card" onclick="showProductDetails('تيشرت MON اسود 2', '8 (1).jpeg', '8 (2).jpeg')"><img src="8 (1).jpeg" class="shirt-img"><button class="buy-btn">عرض التفاصيل</button></div>
+                <div class="product-card" onclick="showProductDetails('تيشرت MON زيتي', '9 (1).jpeg', '9 (2).jpeg')"><img src="9 (1).jpeg" class="shirt-img"><button class="buy-btn">عرض التفاصيل</button></div>
+                <div class="product-card" onclick="showProductDetails('تيشرت MON برجندي', '10 (1).jpeg', '10 (2).jpeg')"><img src="10 (1).jpeg" class="shirt-img"><button class="buy-btn">عرض التفاصيل</button></div>
+                <div class="product-card" onclick="showProductDetails('تيشرت MON بابي بلو 2', '11 (1).jpeg', '11 (2).jpeg')"><img src="11 (1).jpeg" class="shirt-img"><button class="buy-btn">عرض التفاصيل</button></div>
+                <div class="product-card" onclick="showProductDetails('تيشرت MON ابيض 2', '12 (1).jpeg', '12 (2).jpeg')"><img src="12 (1).jpeg" class="shirt-img"><button class="buy-btn">عرض التفاصيل</button></div>
+            </div>
+        </main>
+    </div>
+
+    <div id="details-page" style="display: none;">
+        <div class="slider-wrapper"><img id="p-img-front" class="details-img" src=""><img id="p-img-back" class="details-img" src=""></div>
+        <h1 id="p-title" class="details-title"></h1>
+        <div class="stock-box"><div id="p-stock-list"></div></div>
+        <div class="counter-container">
+            <button onclick="updateValue(-1)">-</button>
+            <input type="number" id="myNumber" value="1" readonly>
+            <button onclick="updateValue(1)">+</button>
+        </div>
+        <button class="buy-btn" onclick="sendOrderToWhatsApp()">تأكيد الشراء 🛒</button>
+        <button class="back-btn" onclick="goBackToStore()">رجوع للمتجر ↩</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
