@@ -29,6 +29,8 @@ body {
     transform: skewX(-10deg);
     padding: 50px 30px;
     border-bottom: 3px solid #ffffff;
+    width: 200px;
+    height: 200px;
 }
 
 .logo-box img {
