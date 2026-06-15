@@ -155,17 +155,44 @@ body {
 
 .slider-wrapper { 
     display: flex; 
-    gap: 12px; 
+    gap: 14px; 
     justify-content: center; 
     margin-bottom: 25px; 
 }
 
+/* تأثير البرواز الأبيض اللامع والمتحرك للصور */
 .details-img {
     width: 48%; 
     height: auto;
     border-radius: 14px;
-    border: 1px solid #2d2d2d;
     object-fit: cover;
+    
+    /* البرواز الأبيض الأساسي */
+    border: 2px solid #ffffff; 
+    
+    /* طبقات الظل الأبيض اللامع (Glow) */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.8), 
+                0 0 15px rgba(255, 255, 255, 0.4), 
+                0 0 25px rgba(255, 255, 255, 0.2);
+                
+    /* تشغيل أنيميشن اللمعان المتحرك */
+    animation: whiteGlow 2s infinite alternate ease-in-out;
+}
+
+/* حركة اللمعان (البريق بيزيد ويقل بنعومة) */
+@keyframes whiteGlow {
+    0% {
+        box-shadow: 0 0 8px rgba(255, 255, 255, 0.3), 
+                    0 0 15px rgba(255, 255, 255, 0.15), 
+                    0 0 20px rgba(255, 255, 255, 0.05);
+        border-color: #e0e0e0;
+    }
+    100% {
+        box-shadow: 0 0 18px rgba(255, 255, 255, 0.8), 
+                    0 0 30px rgba(255, 255, 255, 0.5), 
+                    0 0 45px rgba(255, 255, 255, 0.3);
+        border-color: #ffffff;
+    }
 }
 
 /* العداد (الكمية) */
@@ -258,23 +285,23 @@ body {
     #details-page { 
         width: 100%; 
         max-width: 100%; 
-        border: none;           /* حذف البرواز الأبيض الخارجي */
+        border: none;           /* حذف البرواز الأبيض الخارجي المزعج */
         border-radius: 0px;     /* جعل الصفحة تملأ كامل عرض الموبايل */
         padding: 15px 12px; 
         margin: 0 auto;
     }
     
     #details-page .details-title { 
-        font-size: 24px;        /* حجم خط كبير وواضح لاسم التيشرت */
+        font-size: 24px;        /* حجم خط كبير وواضح لاسم المنتج */
     }
 
     .size-option-btn { 
-        padding: 20px;          /* تكبير الزرار ليصبح سهل الضغط جداً */
-        font-size: 17px;        /* تكبير حجم خط المقاس والمخزون */
+        padding: 20px;          /* تكبير حجم الأزرار لتسهيل الضغط باليد */
+        font-size: 17px;        /* تكبير خط نص المقاسات */
     }
 
     .counter-container button {
-        padding: 15px 35px;     /* تكبير أزرار الـ + والـ - بشكل ضخم ومريح للاستخدام */
+        padding: 15px 35px;     /* أزرار الـ + والـ - ضخمة ومريحة جداً */
         font-size: 28px;
     }
 
@@ -284,7 +311,7 @@ body {
     }
 
     #details-page .buy-btn { 
-        padding: 20px 24px;     /* زر تأكيد الشراء عريض وضخم */
+        padding: 20px 24px;     /* زر تأكيد الشراء الأخضر كبير وواضح جداً */
         font-size: 22px; 
     }
 
